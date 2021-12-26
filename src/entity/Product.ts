@@ -19,6 +19,11 @@ export class Product {
     })
     price: string = '';
 
+    @Column({
+        type: 'simple-array'
+    })
+    colors: string[] = []
+
     @CreateDateColumn({
         type: 'date',
     })

@@ -19,6 +19,17 @@ export class Customer {
     })
     lastname: string = '';
 
+    @Column({
+        type: 'simple-json'
+    })
+    carts: {
+        name: string;
+        totalprice: number;
+    } = {
+            name: '',
+            totalprice: 0
+        }
+
     @CreateDateColumn({
         type: 'date',
     })
@@ -29,4 +40,6 @@ export class Customer {
         type: 'date',
     })
     updatedate!: Date;
+
+
 }
